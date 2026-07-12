@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 app.post('/post',async(req,res)=>{
     const todo=new Todo(req.body);
     await todo.save();
+    console.log(todo);
     res.json(todo);
 })
 app.get('/get/:id',async(req,res)=>{
@@ -26,6 +27,7 @@ app.get('/get/:id',async(req,res)=>{
     //     title:todo1.title,
     //     completed:todo1.completed
     // })
+    console.log(todo1);
     res.json(todo1);
 })
 app.get('/get',async(req,res)=>{
@@ -57,6 +59,7 @@ app.put('/put/:id',async(req,res)=>{
             new:true
         }
     );
+    console.log(todo);
     res.json(todo);
 })
 app.delete('/delete/:id',async(req,res)=>{
